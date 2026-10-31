@@ -201,7 +201,7 @@ export default function Items() {
   ];
 
   return (
-    <div style={{ padding: 24, maxWidth: 1100, margin: "0 auto" }}>
+    <div >
       {contextHolder}
 
       <Link to="/" style={{ fontSize: 14 }}>

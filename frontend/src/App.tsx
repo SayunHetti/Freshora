@@ -4,6 +4,10 @@ import { getToken } from "./lib/api";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Items from "./pages/Items";
+import Hotels from "./pages/Hotels";
+import Buyers from "./pages/Buyers";
+import Suppliers from "./pages/Suppliers";
+import AppLayout from "./components/AppLayout";
 
 function Protected({ children }: { children: ReactNode }) {
   return getToken() ? <>{children}</> : <Navigate to="/login" replace />;
@@ -14,9 +18,49 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Protected><Dashboard /></Protected>} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-        <Route path="/items" element={<Protected><Items /></Protected>} />
+        <Route element={<AppLayout />}>
+          <Route
+            path="/"
+            element={
+              <Protected>
+                <Dashboard />
+              </Protected>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route
+            path="/items"
+            element={
+              <Protected>
+                <Items />
+              </Protected>
+            }
+          />
+          <Route
+            path="/hotels"
+            element={
+              <Protected>
+                <Hotels />
+              </Protected>
+            }
+          />
+          <Route
+            path="/suppliers"
+            element={
+              <Protected>
+                <Suppliers />
+              </Protected>
+            }
+          />
+          <Route
+            path="/buyers"
+            element={
+              <Protected>
+                <Buyers />
+              </Protected>
+            }
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
