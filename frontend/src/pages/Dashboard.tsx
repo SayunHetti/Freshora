@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { clearToken } from "../lib/api";
 
 export default function Dashboard() {
@@ -13,6 +13,9 @@ export default function Dashboard() {
     <div style={{ padding: 16 }}>
       <h2>Dashboard</h2>
       <p>You are logged in.</p>
+      <p>
+        <Link to="/items">Items</Link>
+      </p>
       <button onClick={logout}>Log out</button>
     </div>
   );
