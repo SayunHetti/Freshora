@@ -50,6 +50,24 @@ const sections = [
     to: "/buyers",
   },
   {
+    key: "prices",
+    title: "Prices",
+    description: "Manage product prices and discounts",
+    icon: <ShoppingCartOutlined />,
+    color: "#9333ea",
+    bg: "#f3e8ff",
+    to: "/prices",
+  },
+  {
+    key: "orders",
+    title: "Orders",
+    description: "Place and review orders (coming soon)",
+    icon: <ShoppingCartOutlined />,
+    color: "#9333ea",
+    bg: "#f3e8ff",
+    to: "/orders",
+  },
+  {
     key: "orders",
     title: "Orders",
     description: "Place and review orders (coming soon)",
@@ -120,7 +138,9 @@ export default function Dashboard() {
                   {s.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>
+                  <div
+                    style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}
+                  >
                     {s.title}
                   </div>
                   {!s.to && (

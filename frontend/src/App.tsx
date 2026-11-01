@@ -8,6 +8,8 @@ import Hotels from "./pages/Hotels";
 import Buyers from "./pages/Buyers";
 import Suppliers from "./pages/Suppliers";
 import AppLayout from "./components/AppLayout";
+import Prices from "./pages/Prices";
+import Orders from "./pages/Orders";
 
 function Protected({ children }: { children: ReactNode }) {
   return getToken() ? <>{children}</> : <Navigate to="/login" replace />;
@@ -57,6 +59,22 @@ export default function App() {
             element={
               <Protected>
                 <Buyers />
+              </Protected>
+            }
+          />
+          <Route
+            path="/prices"
+            element={
+              <Protected>
+                <Prices />
+              </Protected>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <Protected>
+                <Orders />
               </Protected>
             }
           />

@@ -6,6 +6,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   ShopOutlined,
+  ShoppingCartOutlined,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -29,6 +30,8 @@ const NAV_ITEMS = [
   { key: "/hotels", label: "Hotels", icon: <ShopOutlined /> },
   { key: "/suppliers", label: "Suppliers", icon: <TeamOutlined /> },
   { key: "/buyers", label: "Buyers", icon: <UserOutlined /> },
+  { key: "/prices", label: "Hotel Prices", icon: <ShopOutlined /> },
+  { key: "/orders", label: "Orders", icon: <ShoppingCartOutlined /> },
 ];
 
 export default function AppLayout() {
@@ -48,7 +51,7 @@ export default function AppLayout() {
       .find(
         (item) =>
           location.pathname === item.key ||
-          (item.key !== "/" && location.pathname.startsWith(item.key))
+          (item.key !== "/" && location.pathname.startsWith(item.key)),
       )?.key ?? "/";
 
   const userMenu = {
@@ -128,7 +131,8 @@ export default function AppLayout() {
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             />
             <Text type="secondary" style={{ fontSize: 14 }}>
-              {NAV_ITEMS.find((i) => i.key === selectedKey)?.label ?? "Dashboard"}
+              {NAV_ITEMS.find((i) => i.key === selectedKey)?.label ??
+                "Dashboard"}
             </Text>
           </Space>
 
