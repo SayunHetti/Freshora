@@ -184,6 +184,15 @@ export default function Dashboard() {
           );
         })}
       </Row>
+      <p>
+        <Link to="/purchases">Purchases</Link>
+      </p>
+      <p>
+        <Link to="/supplier-payments">Supplier payments</Link>
+      </p>
+      <p>
+        <Link to="/cash">Buyer cash</Link>
+      </p>
     </>
   );
 }
